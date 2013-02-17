@@ -1,4 +1,5 @@
-hello-world
-===========
+# Hello, world!
 
-Basic skeleton of a C program that prints hello world to the console.
+This is a simple hello world program whose purpose is not to illustrate how to
+program, but what to do after the program is finished. Namely, how to publish a
+software under the GPL and package it for distribution in Debian systems
