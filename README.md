@@ -2,4 +2,5 @@
 
 This is a simple hello world program whose purpose is not to illustrate how to
 program, but what to do after the program is finished. Namely, how to publish a
-software under the GPL and package it for distribution in Debian systems
+piece of software under the GPL and package it for distribution in Debian
+systems.
