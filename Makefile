@@ -11,7 +11,8 @@ C_OPTS := -c
 BUILD_VERSION = $(shell git describe | cut -c 2-)
 TARNAME = $(PROJECT)-$(BUILD_VERSION)
 
-.PHONY: clean cleanall
+.PHONY: clean cleanall install uninstall dist
+
 all: $(PROJECT)
 
 $(PROJECT): $(OBJS)
