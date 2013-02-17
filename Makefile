@@ -26,6 +26,12 @@ clean:
 cleanall: clean
 	rm -f $(PROJECT)
 
+install: all
+	/usr/bin/install -c $(PROJECT)  '/usr/local/bin'
+
+uninstall:
+	cd '/usr/local/bin' && rm -f $(PROJECT)
+
 dist:
 	mkdir -p $(TARNAME)
 	ln main.c Makefile $(TARNAME)/
