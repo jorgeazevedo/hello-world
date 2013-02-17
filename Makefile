@@ -8,6 +8,9 @@ G_OPTS := -W -lpthread
 # Only generate object code files
 C_OPTS := -c
 
+BUILD_VERSION = $(shell git describe | cut -c 2-)
+TARNAME = $(PROJECT)-$(BUILD_VERSION)
+
 .PHONY: clean cleanall
 all: $(PROJECT)
 
@@ -22,6 +25,12 @@ clean:
 
 cleanall: clean
 	rm -f $(PROJECT)
+
+dist:
+	mkdir -p $(TARNAME)
+	cp main.c Makefile $(TARNAME)/
+	tar chof - $(TARNAME) | GZIP='--no-name --best --rsyncable' gzip -c >$(TARNAME).tar.gz
+	rm -rf $(TARNAME)
 
 # $@ represents the left side of the ":"
 # $^ represents the right side of the ":"
