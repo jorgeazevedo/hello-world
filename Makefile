@@ -28,7 +28,7 @@ cleanall: clean
 
 dist:
 	mkdir -p $(TARNAME)
-	cp main.c Makefile $(TARNAME)/
+	ln main.c Makefile $(TARNAME)/
 	tar chof - $(TARNAME) | GZIP='--no-name --best --rsyncable' gzip -c >$(TARNAME).tar.gz
 	rm -rf $(TARNAME)
 
