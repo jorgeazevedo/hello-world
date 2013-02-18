@@ -1,5 +1,5 @@
 PROJECT = hello-world
-OBJS = main.o
+OBJS = main.o args.o
 
 INCLUDES = -I./
 
@@ -24,7 +24,7 @@ $(PROJECT): $(OBJS)
 mostlyclean:
 	rm -f $(OBJS)
 
-clea: mostlyclean
+clean: mostlyclean
 	rm -f $(PROJECT)
 
 install: all
