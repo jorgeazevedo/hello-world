@@ -21,10 +21,10 @@ $(PROJECT): $(OBJS)
 %.o: %.c
 	$(COMPILER) $(G_OPTS) $(C_OPTS) $< $(INCLUDES) -o $@
 
-clean:
+mostlyclean:
 	rm -f $(OBJS)
 
-cleanall: clean
+clea: mostlyclean
 	rm -f $(PROJECT)
 
 install: all
