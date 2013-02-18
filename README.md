@@ -8,3 +8,13 @@ systems.
 ## Installation
 
 See INSTALL file for building and installation instructions.
+
+## Usage
+
+Running
+
+    $ hello-world
+
+Should yield the message
+
+    Hello, world!
