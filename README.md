@@ -18,3 +18,9 @@ Running
 Should yield the message
 
     Hello, world!
+
+## Source tree
+
+The source tree purposely borders on the trivial. It contains a `main.c` - the
+entry point for the application -  and the respective `Makefile` in the root
+directory. 
