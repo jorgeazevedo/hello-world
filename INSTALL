@@ -1,0 +1,6 @@
+# Installation Instructions
+
+Simply run the shell commands
+
+    $ make
+    $ sudo make install
