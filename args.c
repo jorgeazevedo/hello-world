@@ -2,46 +2,25 @@
 #include <stdio.h>
 #include <getopt.h>
 
-const char* package_name = "package_name";
-
 void print_help(void)
 {
-  //TODO: this should not be staticaly defined
-  const char* program_name = "hello-world";
-  const char* package_bugreport = "bug-report";
-  const char* package_url = "package_url";
-
-        printf ("\
-Usage: %s [OPTION]...\n", program_name);
-
-  printf("\
-Print a friendly, customizable greeting.\n", stdout);
-  printf("\
+        printf("\
+Usage: hello-world [OPTION]...\n\
+Print a friendly, customizable greeting.\n\
   -h, --help          display this help and exit\n\
-  -v, --version       display version information and exit\n", stdout);
-
-  printf("\n");
-  printf("\
-Report bugs to: %s\n", package_bugreport);
-  printf("%s home page: <%s>", package_name, package_url);
+  -v, --version       display version information and exit\n\
+\n\
+Report bugs to: https://github.com/jorgeazevedo/hello-worldo/issues\n\
+hello-world home page: <https://github.com/jorgeazevedo/hello-world>\n");
 }
 
 void print_version(void)
 {
-//TODO: there must be a better way to handle this
-  const char* package_version = "1.0";
-  printf("hello (GNU %s) %s\n", package_name, package_version);
-  printf("");
-
-  /* It is important to separate the year from the rest of the message,
-     as done here, to avoid having to retranslate the message when a new
-     year comes around.  */
-  printf("\
-Copyright (C) %s Jorge Azevedo\n\
+	printf("hello-world 1.0\n\
+Copyright (C) 2013 Jorge Azevedo\n\
 License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>\n\
 This is free software: you are free to change and redistribute it.\n\
-There is NO WARRANTY, to the extent permitted by law.\n",
-              "2013");
+There is NO WARRANTY, to the extent permitted by law.\n");
 }
 
 void arguments(int argc, char **argv)
