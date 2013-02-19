@@ -2,6 +2,16 @@
 #include <stdio.h>
 #include <getopt.h>
 
+void print_help(void)
+{
+	puts("HELP\n");
+}
+
+void print_version(void)
+{
+	puts("VERSION\n");
+}
+
 void arguments(int argc, char **argv)
 {
 	int c;
@@ -39,11 +49,13 @@ void arguments(int argc, char **argv)
 				break;
 
 			case 'h':
-				puts ("HELP\n");
+				print_help();
+				exit (EXIT_SUCCESS);
 				break;
 
 			case 'v':
-				puts ("VERSION\n");
+				print_version();
+				exit (EXIT_SUCCESS);
 				break;
 			case '?':
 				/* getopt_long already printed an error message. */
