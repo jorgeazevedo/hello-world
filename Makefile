@@ -38,9 +38,9 @@ install: all
 uninstall:
 	cd '/usr/local/bin' && rm -f $(PROJECT)
 
-dist:
+dist: $(PROJECT_MAN)
 	mkdir -p $(TARNAME)
-	ln main.c Makefile $(TARNAME)/
+	ln main.c Makefile args.c args.h $(PROJECT_MAN) $(TARNAME)/
 	tar chof - $(TARNAME) | GZIP='--no-name --best --rsyncable' gzip -c >$(TARNAME).tar.gz
 	rm -rf $(TARNAME)
 
