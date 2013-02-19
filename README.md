@@ -5,6 +5,11 @@ illustrate how to program, but what to do after the program is finished.
 Namely, how to publish a piece of software under the GPL and package it for
 distribution in Debian systems.
 
+## Dependencies
+
+Most of this package's dependencies are fullfilled by `build-essentials`. In
+addition to this, you need `git` and `help2man`.
+
 ## Installation
 
 See INSTALL file for building and installation instructions.
