@@ -20,12 +20,11 @@ void arguments(int argc, char **argv)
 	{
 		static struct option long_options[] =
 		{
-			/* These options don't set a flag.
-			  We distinguish them by their indices. */
 			{"help",     no_argument,       NULL, 'h'},
 			{"version",  no_argument,       NULL, 'v'},
 			{NULL, 0, NULL, 0}
 		};
+
 		/* getopt_long stores the option index here. */
 		int option_index = 0;
 
@@ -38,16 +37,6 @@ void arguments(int argc, char **argv)
 
 		switch (c)
 		{
-			case 0:
-				/* If this option set a flag, do nothing else now. */
-				if (long_options[option_index].flag != 0)
-					break;
-				printf ("option %s", long_options[option_index].name);
-				if (optarg)
-					printf (" with arg %s", optarg);
-				printf ("\n");
-				break;
-
 			case 'h':
 				print_help();
 				exit (EXIT_SUCCESS);
@@ -67,3 +56,4 @@ void arguments(int argc, char **argv)
 	 }
 
 }
+
