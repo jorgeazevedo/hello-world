@@ -12,9 +12,9 @@ void arguments(int argc, char **argv)
 		{
 			/* These options don't set a flag.
 			  We distinguish them by their indices. */
-			{"help",     no_argument,       0, 'h'},
-			{"version",  no_argument,       0, 'v'},
-			{0, 0, 0, 0}
+			{"help",     no_argument,       NULL, 'h'},
+			{"version",  no_argument,       NULL, 'v'},
+			{NULL, 0, NULL, 0}
 		};
 		/* getopt_long stores the option index here. */
 		int option_index = 0;
