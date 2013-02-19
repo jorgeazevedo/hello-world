@@ -10,7 +10,7 @@ Print a friendly, customizable greeting.\n\
   -h, --help          display this help and exit\n\
   -v, --version       display version information and exit\n\
 \n\
-Report bugs to: https://github.com/jorgeazevedo/hello-worldo/issues\n\
+Report bugs to: <https://github.com/jorgeazevedo/hello-worldo/issues>\n\
 hello-world home page: <https://github.com/jorgeazevedo/hello-world>\n");
 }
 
