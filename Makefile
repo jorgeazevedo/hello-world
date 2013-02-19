@@ -11,9 +11,14 @@ C_OPTS := -c
 BUILD_VERSION = $(shell git describe | cut -c 2-)
 TARNAME = $(PROJECT)-$(BUILD_VERSION)
 
+PROJECT_MAN = $(PROJECT).1
+
 .PHONY: clean cleanall install uninstall dist
 
-all: $(PROJECT)
+all: $(PROJECT) $(PROJECT_MAN)
+
+$(PROJECT_MAN) : $(PROJECT) args.c
+	help2man --no-info --output=$@ ./$(PROJECT)
 
 $(PROJECT): $(OBJS)
 	$(COMPILER) $(G_OPTS) $(INCLUDES) $^ -o $@
@@ -25,7 +30,7 @@ mostlyclean:
 	rm -f $(OBJS)
 
 clean: mostlyclean
-	rm -f $(PROJECT)
+	rm -f $(PROJECT) $(PROJECT_MAN)
 
 install: all
 	/usr/bin/install -c $(PROJECT)  '/usr/local/bin'
