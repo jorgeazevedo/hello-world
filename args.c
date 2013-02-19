@@ -2,12 +2,13 @@
 #include <stdio.h>
 #include <getopt.h>
 
+const char* package_name = "package_name";
+
 void print_help(void)
 {
   //TODO: this should not be staticaly defined
   const char* program_name = "hello-world";
   const char* package_bugreport = "bug-report";
-  const char* package_name = "package_name";
   const char* package_url = "package_url";
 
         printf ("\
@@ -27,7 +28,20 @@ Report bugs to: %s\n", package_bugreport);
 
 void print_version(void)
 {
-	puts("VERSION");
+//TODO: there must be a better way to handle this
+  const char* package_version = "1.0";
+  printf("hello (GNU %s) %s\n", package_name, package_version);
+  printf("");
+
+  /* It is important to separate the year from the rest of the message,
+     as done here, to avoid having to retranslate the message when a new
+     year comes around.  */
+  printf("\
+Copyright (C) %s Jorge Azevedo\n\
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>\n\
+This is free software: you are free to change and redistribute it.\n\
+There is NO WARRANTY, to the extent permitted by law.\n",
+              "2013");
 }
 
 void arguments(int argc, char **argv)
