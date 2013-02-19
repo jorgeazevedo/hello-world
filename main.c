@@ -18,7 +18,7 @@
 #include <stdio.h>
 #include "args.h"
 
-int main (int argc, char **argv)
+int main (int argc, char** argv)
 {
 	arguments(argc,argv);
 	printf("Hello, world!\n");
