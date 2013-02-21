@@ -8,8 +8,8 @@ G_OPTS := -W -lpthread
 # Only generate object code files
 C_OPTS := -c
 
-BUILD_VERSION = $(shell git describe | cut -c 2-)
-TARNAME = $(PROJECT)-$(BUILD_VERSION)
+VERSION = 1.0
+TARNAME = $(PROJECT)-$(VERSION)
 
 PROJECT_MAN = $(PROJECT).1
 
