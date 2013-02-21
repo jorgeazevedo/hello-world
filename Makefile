@@ -15,16 +15,18 @@ PROJECT_MAN = $(PROJECT).1
 
 .PHONY: clean cleanall install uninstall dist
 
-all: $(PROJECT) $(PROJECT_MAN)
-
-$(PROJECT_MAN) : $(PROJECT) args.c
-	help2man --no-info --output=$@ ./$(PROJECT)
+all: $(PROJECT) 
 
 $(PROJECT): $(OBJS)
 	$(COMPILER) $(G_OPTS) $(INCLUDES) $^ -o $@
 
 %.o: %.c
 	$(COMPILER) $(G_OPTS) $(C_OPTS) $< $(INCLUDES) -o $@
+
+man: $(PROJECT_MAN)
+
+$(PROJECT_MAN) : $(PROJECT) args.c
+	help2man --no-info --output=$@ ./$(PROJECT)
 
 mostlyclean:
 	rm -f $(OBJS)
