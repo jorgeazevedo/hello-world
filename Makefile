@@ -25,7 +25,7 @@ $(PROJECT): $(OBJS)
 
 man: $(PROJECT_MAN)
 
-$(PROJECT_MAN) : $(PROJECT) args.c
+$(PROJECT_MAN): args.c
 	help2man --no-info --output=$@ ./$(PROJECT)
 
 mostlyclean:
