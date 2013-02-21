@@ -32,7 +32,7 @@ mostlyclean:
 	rm -f $(OBJS)
 
 clean: mostlyclean
-	rm -f $(PROJECT) $(PROJECT_MAN)
+	rm -f $(PROJECT)
 
 install: all
 	/usr/bin/install -c $(PROJECT)  '/usr/local/bin'
