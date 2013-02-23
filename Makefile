@@ -11,8 +11,10 @@ VERSION = 1.0
 TARNAME = $(TARGET)-$(VERSION)
 MANPAGE = $(TARGET).1
 INSTALL_PROGRAM = /usr/bin/install
+INSTALL_FILE = /usr/bin/install -m 644
 DEL_FILE = rm -f
 DESTINATION = /usr/local/bin
+MANDESTINATION = /usr/share/man/man1/
 
 .PHONY: clean cleanall install uninstall dist
 
@@ -37,9 +39,11 @@ clean: mostlyclean
 
 install: all
 	$(INSTALL_PROGRAM) $(TARGET) $(DESTINATION)
+	$(INSTALL_FILE) $(MANPAGE) $(MANDESTINATION)
 
 uninstall:
 	$(DEL_FILE) $(DESTINATION)/$(TARGET)
+	$(DEL_FILE) $(MANDESTINATION)/$(MANPAGE)
 
 dist: $(MANPAGE)
 	mkdir -p $(TARNAME)
