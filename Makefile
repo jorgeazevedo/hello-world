@@ -13,7 +13,7 @@ MANPAGE = $(TARGET).1
 INSTALL_PROGRAM = /usr/bin/install
 INSTALL_FILE = /usr/bin/install -m 644
 DEL_FILE = rm -f
-DESTINATION = /usr/local/bin
+DESTINATION = /usr/bin
 MANDESTINATION = /usr/share/man/man1
 
 .PHONY: clean cleanall install uninstall dist
