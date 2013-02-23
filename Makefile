@@ -11,6 +11,7 @@ VERSION = 1.0
 TARNAME = $(TARGET)-$(VERSION)
 MANPAGE = $(TARGET).1
 INSTALL_PROGRAM = /usr/bin/install
+DEL_FILE = rm -f
 DESTINATION = /usr/local/bin
 
 .PHONY: clean cleanall install uninstall dist
@@ -38,7 +39,7 @@ install: all
 	$(INSTALL_PROGRAM) $(TARGET) $(DESTINATION)
 
 uninstall:
-	rm -f $(DESTINATION)/$(TARGET)
+	$(DEL_FILE) $(DESTINATION)/$(TARGET)
 
 dist: $(MANPAGE)
 	mkdir -p $(TARNAME)
