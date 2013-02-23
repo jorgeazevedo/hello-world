@@ -1,4 +1,4 @@
-PROJECT = hello-world
+TARGET = hello-world
 OBJS = main.o args.o
 
 INCLUDES = -I./
@@ -9,40 +9,40 @@ G_OPTS := -W -lpthread
 C_OPTS := -c
 
 VERSION = 1.0
-TARNAME = $(PROJECT)-$(VERSION)
+TARNAME = $(TARGET)-$(VERSION)
 
-PROJECT_MAN = $(PROJECT).1
+TARGET_MAN = $(TARGET).1
 
 .PHONY: clean cleanall install uninstall dist
 
-all: $(PROJECT) 
+all: $(TARGET) 
 
-$(PROJECT): $(OBJS)
+$(TARGET): $(OBJS)
 	$(COMPILER) $(G_OPTS) $(INCLUDES) $^ -o $@
 
 %.o: %.c
 	$(COMPILER) $(G_OPTS) $(C_OPTS) $< $(INCLUDES) -o $@
 
-man: $(PROJECT_MAN)
+man: $(TARGET_MAN)
 
-$(PROJECT_MAN): args.c
-	help2man --no-info --output=$@ ./$(PROJECT)
+$(TARGET_MAN): args.c
+	help2man --no-info --output=$@ ./$(TARGET)
 
 mostlyclean:
 	rm -f $(OBJS)
 
 clean: mostlyclean
-	rm -f $(PROJECT)
+	rm -f $(TARGET)
 
 install: all
-	/usr/bin/install $(PROJECT) '/usr/local/bin'
+	/usr/bin/install $(TARGET) '/usr/local/bin'
 
 uninstall:
-	cd '/usr/local/bin' && rm -f $(PROJECT)
+	cd '/usr/local/bin' && rm -f $(TARGET)
 
-dist: $(PROJECT_MAN)
+dist: $(TARGET_MAN)
 	mkdir -p $(TARNAME)
-	ln main.c Makefile args.c args.h $(PROJECT_MAN) $(TARNAME)/
+	ln main.c Makefile args.c args.h $(TARGET_MAN) $(TARNAME)/
 	tar chof - $(TARNAME) | GZIP='--no-name --best --rsyncable' gzip -c >$(TARNAME).tar.gz
 	rm -rf $(TARNAME)
 
