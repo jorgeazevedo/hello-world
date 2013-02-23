@@ -11,7 +11,7 @@ C_OPTS := -c
 VERSION = 1.0
 TARNAME = $(TARGET)-$(VERSION)
 
-TARGET_MAN = $(TARGET).1
+MANPAGE = $(TARGET).1
 
 .PHONY: clean cleanall install uninstall dist
 
@@ -23,9 +23,9 @@ $(TARGET): $(OBJS)
 %.o: %.c
 	$(COMPILER) $(G_OPTS) $(C_OPTS) $< $(INCLUDES) -o $@
 
-man: $(TARGET_MAN)
+man: $(MANPAGE)
 
-$(TARGET_MAN): args.c
+$(MANPAGE): args.c
 	help2man --no-info --output=$@ ./$(TARGET)
 
 mostlyclean:
@@ -40,9 +40,9 @@ install: all
 uninstall:
 	cd '/usr/local/bin' && rm -f $(TARGET)
 
-dist: $(TARGET_MAN)
+dist: $(MANPAGE)
 	mkdir -p $(TARNAME)
-	ln main.c Makefile args.c args.h $(TARGET_MAN) $(TARNAME)/
+	ln main.c Makefile args.c args.h $(MANPAGE) $(TARNAME)/
 	tar chof - $(TARNAME) | GZIP='--no-name --best --rsyncable' gzip -c >$(TARNAME).tar.gz
 	rm -rf $(TARNAME)
 
