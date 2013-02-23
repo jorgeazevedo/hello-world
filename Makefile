@@ -11,6 +11,7 @@ VERSION = 1.0
 TARNAME = $(TARGET)-$(VERSION)
 MANPAGE = $(TARGET).1
 INSTALL_PROGRAM = /usr/bin/install
+DESTINATION = /usr/local/bin
 
 .PHONY: clean cleanall install uninstall dist
 
@@ -34,10 +35,10 @@ clean: mostlyclean
 	rm -f $(TARGET)
 
 install: all
-	$(INSTALL_PROGRAM) $(TARGET) '/usr/local/bin'
+	$(INSTALL_PROGRAM) $(TARGET) $(DESTINATION)
 
 uninstall:
-	cd '/usr/local/bin' && rm -f $(TARGET)
+	cd $(DESTINATION) && rm -f $(TARGET)
 
 dist: $(MANPAGE)
 	mkdir -p $(TARNAME)
