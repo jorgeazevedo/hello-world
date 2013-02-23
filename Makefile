@@ -30,10 +30,10 @@ $(MANPAGE): args.c
 	help2man --no-info --output=$@ ./$(TARGET)
 
 mostlyclean:
-	rm -f $(OBJS)
+	$(DEL_FILE) $(OBJS)
 
 clean: mostlyclean
-	rm -f $(TARGET)
+	$(DEL_FILE) $(TARGET)
 
 install: all
 	$(INSTALL_PROGRAM) $(TARGET) $(DESTINATION)
