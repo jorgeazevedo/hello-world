@@ -35,7 +35,7 @@ clean: mostlyclean
 	rm -f $(PROJECT)
 
 install: all
-	/usr/bin/install -c $(PROJECT)  '/usr/local/bin'
+	/usr/bin/install $(PROJECT) '/usr/local/bin'
 
 uninstall:
 	cd '/usr/local/bin' && rm -f $(PROJECT)
