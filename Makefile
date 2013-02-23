@@ -3,7 +3,7 @@ OBJS = main.o args.o
 
 INCLUDES = -I./
 
-COMPILER = gcc
+CC = gcc
 G_OPTS := -W -lpthread
 # Only generate object code files
 C_OPTS := -c
@@ -18,10 +18,10 @@ MANPAGE = $(TARGET).1
 all: $(TARGET) 
 
 $(TARGET): $(OBJS)
-	$(COMPILER) $(G_OPTS) $(INCLUDES) $^ -o $@
+	$(CC) $(G_OPTS) $(INCLUDES) $^ -o $@
 
 %.o: %.c
-	$(COMPILER) $(G_OPTS) $(C_OPTS) $< $(INCLUDES) -o $@
+	$(CC) $(G_OPTS) $(C_OPTS) $< $(INCLUDES) -o $@
 
 man: $(MANPAGE)
 
