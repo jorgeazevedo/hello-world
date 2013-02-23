@@ -2,7 +2,6 @@ TARGET = hello-world
 OBJS = main.o args.o
 
 INCLUDES = -I./
-
 CC = gcc
 G_OPTS := -W -lpthread
 # Only generate object code files
@@ -10,8 +9,8 @@ C_OPTS := -c
 
 VERSION = 1.0
 TARNAME = $(TARGET)-$(VERSION)
-
 MANPAGE = $(TARGET).1
+INSTALL_PROGRAM = /usr/bin/install
 
 .PHONY: clean cleanall install uninstall dist
 
@@ -35,7 +34,7 @@ clean: mostlyclean
 	rm -f $(TARGET)
 
 install: all
-	/usr/bin/install $(TARGET) '/usr/local/bin'
+	$(INSTALL_PROGRAM) $(TARGET) '/usr/local/bin'
 
 uninstall:
 	cd '/usr/local/bin' && rm -f $(TARGET)
