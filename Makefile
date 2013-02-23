@@ -38,7 +38,7 @@ install: all
 	$(INSTALL_PROGRAM) $(TARGET) $(DESTINATION)
 
 uninstall:
-	cd $(DESTINATION) && rm -f $(TARGET)
+	rm -f $(DESTINATION)/$(TARGET)
 
 dist: $(MANPAGE)
 	mkdir -p $(TARNAME)
