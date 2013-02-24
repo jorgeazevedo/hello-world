@@ -48,6 +48,7 @@ uninstall:
 dist: $(MANPAGE)
 	mkdir -p $(TARNAME)
 	ln main.c Makefile args.c args.h $(MANPAGE) $(TARNAME)/
+	ln README.md $(TARNAME)/README
 	tar chof - $(TARNAME) | GZIP='--no-name --best --rsyncable' gzip -c >$(TARNAME).tar.gz
 	rm -rf $(TARNAME)
 
