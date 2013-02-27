@@ -24,7 +24,7 @@ void print_help(void)
 {
         printf("\
 Usage: hello-world [OPTION]...\n\
-Print a friendly, customizable greeting.\n\
+Prints \"Hello, world!\" to the console.\n\
   -h, --help          display this help and exit\n\
   -v, --version       display version information and exit\n\
 \n\
