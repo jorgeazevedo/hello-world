@@ -1,6 +1,6 @@
 # Hello, world!
 
-This is version 1.0 of a simple hello world program whose purpose is not to
+This is version 1.1 of a simple hello world program whose purpose is not to
 illustrate how to program, but what to do after the program is finished.
 Namely, how to publish a piece of software under the GPL and package it for
 distribution in Debian systems.

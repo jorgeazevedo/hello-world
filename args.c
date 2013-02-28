@@ -35,7 +35,7 @@ hello-world home page: <http://github.com/jorgeazevedo/hello-world>\n");
 void print_version(void)
 {
 	printf("\
-hello-world 1.0\n\
+hello-world 1.1\n\
 Copyright (C) 2013 Jorge Azevedo\n\
 License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>\n\
 This is free software: you are free to change and redistribute it.\n\
