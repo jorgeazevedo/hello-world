@@ -7,7 +7,7 @@ G_OPTS := -W -lpthread
 # Only generate object code files
 C_OPTS := -c
 
-VERSION = 1.1
+VERSION = 2.0
 TARNAME = $(TARGET)-$(VERSION)
 MANPAGE = $(TARGET).1
 INSTALL_PROGRAM = /usr/bin/install
